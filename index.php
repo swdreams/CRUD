@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PHP CRUD</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style> 
         body{
@@ -22,24 +23,23 @@
 
         <div class="form-group"> 
           <label for="">First name: </label>
-          <input type="text" class="col-xs-3" name='inputFname'  id='first_name'>
+          <input type="text" class="col-xs-3" name='input_Fname'>
         </div>
 
         <div class="form-group"> 
           <label for="">Last name: </label>
-          <input type="text" class="col-xs-3" name='inputLname' id='last_name'>
+          <input type="text" class="col-xs-3" name='input_Lname'>
         </div>
 
         <div class="form-group"> 
           <label for="">Gender: </label>
-            <input type="radio" name='inputGender' style='margin-left: 20px;' value='Male' checked="checked"> Male
-            <input type="radio" name='inputGender' style='margin-left: 20px;' value='Female'
-          > Female
+            <input type="radio" name='input_Gender' style='margin-left: 20px;' value='Male' checked="checked"> Male
+            <input type="radio" name='input_Gender' style='margin-left: 20px;' value='Female' > Female
         </div>
 
         <div class="form-group"> 
           <label for="">Address: </label>
-          <input type="text" class="col-xs-3" style='margin-left: 18px;' name='inputAddress' id='address'>
+          <input type="text" class="col-xs-3" style='margin-left: 18px;' name='input_Address'>
         </div>
 
         <div class="form-group col-xs-1">
