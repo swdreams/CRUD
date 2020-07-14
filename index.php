@@ -83,7 +83,7 @@ if (isset($_SESSION['message'])):
                     <td><?php echo $row->place; ?></td>
                     <td colspan="2">
                         <a href="index.php?action=edit&id=<?php echo $row->id; ?>" class="btn btn-info">Edit</a>
-                        <a href="index.php?action=delete&id==<?php echo $row->id; ?>" class="btn btn-danger">Delete</a>
+                        <a href="index.php?action=delete&id=<?php echo $row->id; ?>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
