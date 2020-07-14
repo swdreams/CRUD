@@ -8,7 +8,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
 
 //delete button
 if ($action == 'delete') {
-    $uId = ($_GET['btnDelete']);
+    $uId = ($_GET['id']);
     $sql = "DELETE FROM tb_user WHERE id = $uId";
     $conn->query($sql);
     $_SESSION['message'] = "Record has been deleted!";
