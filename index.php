@@ -18,6 +18,19 @@
     <!-- include php files -->
     <?php include_once 'includes/process.php' ?>
 
+    <?php 
+      
+      if (isset($_SESSION['message'])):
+
+    ?>
+
+    <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
+        <?php 
+          echo $_SESSION['message'];
+          unset($_SESSION['message']);
+        ?>
+  </div>
+        <?php endif ?>
     <h1>Basic CRUD</h1>
     <form action="" method="post" id="form" autocomplete="off" >
 
@@ -49,32 +62,31 @@
 
         <div class="form-group">
           <table class='table'>
-            <thead>
-              <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Gender</th>
-                <th>Location</th>
-                <th colspan="2">Action</th>
-              </tr>
-            </thead>
+              <thead>
+                <tr>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Gender</th>
+                  <th>Location</th>
+                  <th colspan="2">Action</th>
+                </tr>
+              </thead>
               <?php
                 $result = $conn->query('SELECT * FROM tb_user ORDER BY id DESC') or die($conn->error);
-                  while($row = $result->fetch_object()): ?>
-                    <tr>
-                      <td><?php echo $row->first_name; ?> </td>
-                      <td><?php echo $row->last_name; ?></td>
-                      <td><?php echo $row->gender; ?></td>
-                      <td><?php echo $row->place; ?></td>
-                      <td colspan="2">
-                        <input type="button" class="btn btn-primary" value="Edit" name="btnEdit">
-                        <input type="button" class="btn btn-danger" value="Delete" name="btnDelete">
-
-                      </td>
-                    </tr>
+                while($row = $result->fetch_object()):?>
+                <tr>
+                  <td><?php echo $row->first_name; ?> </td>
+                  <td><?php echo $row->last_name; ?></td>
+                  <td><?php echo $row->gender; ?></td>
+                  <td><?php echo $row->place; ?></td>
+                  <td colspan="2">                 
+                    <a href="index.php?edit<?php echo $row->id; ?>" class="btn btn-info">Edit</a>
+                    <a href="includes/process.php?delete=<?php echo $row->id; ?>" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
                     <?php endwhile; ?>
-          </table>
-        </div>
+            </table>
+          </div>
     </form>
     <script src="script/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
